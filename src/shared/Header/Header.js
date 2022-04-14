@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 import "./Header.css"
 import { useAuthState } from "react-firebase-hooks/auth"
 import auth from "../../firebase.init"
@@ -7,7 +7,13 @@ import { Button } from "@mui/material"
 import { signOut } from "firebase/auth"
 
 const Header = () => {
+	const { pathname } = useLocation()
 	const [user] = useAuthState(auth)
+	console.log(pathname)
+	if (pathname.includes("blog")) {
+		return ""
+	}
+
 	return (
 		<header>
 			<nav>

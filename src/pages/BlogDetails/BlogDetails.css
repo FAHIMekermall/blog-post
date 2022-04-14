@@ -6,3 +6,9 @@
 .blog-details-container p{
     width: 75%;
 }
+.blog-details-header{
+    display: flex;
+    justify-content:space-between;
+    margin: 25px 120px;
+    align-items: center;
+}
