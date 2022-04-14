@@ -220,7 +220,7 @@ const Register = () => {
 					{confirmPassword.error && (
 						<small className="error">{confirmPassword.error}</small>
 					)}
-					<input type="submit" id="submit" value="Login" />
+					<input type="submit" id="submit" value="Register" />
 					<p className="redirect-register">
 						<span>Already have an account?</span>{" "}
 						<Link to="/login">Log in</Link>
