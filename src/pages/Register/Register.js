@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import "../Login/Login.css"
 import { GrFormViewHide, GrView } from "react-icons/gr"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import {
 	useCreateUserWithEmailAndPassword,
 	useUpdateProfile,
 } from "react-firebase-hooks/auth"
 import auth from "../../firebase.init"
 import SocialLogin from "../../shared/SocialLogin/SocialLogin"
+import Spinner from "../../shared/Spinner/Spinner"
 
 const Register = () => {
 	const [passWordShow, setPasswordShow] = useState(false)
@@ -15,13 +16,18 @@ const Register = () => {
 	const [number, setNumber] = useState({ value: "", error: "" })
 	const [password, setPassword] = useState({ value: "", error: "" })
 	const [createUserWithEmailAndPassword, user, loading, error] =
-		useCreateUserWithEmailAndPassword(auth)
+		useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
 	const [updateProfile] = useUpdateProfile(auth)
 	const [confirmPassword, setConfirmPassword] = useState({
 		value: "",
 		error: "",
 	})
-
+	if(loading){
+		return <Spinner></Spinner>
+	}
+	if(user){
+		return <Navigate to='/profile'></Navigate>
+	}
 	const handleNameInput = (event) => {
 		const namePart = event.target.value.split(" ")
 		if (namePart.length < 2) {
@@ -45,7 +51,7 @@ const Register = () => {
 				error: "last Name must start with capital letter",
 			})
 		} else {
-			setName({ value: "", error: "" })
+			setName({ value: event.target.value, error: "" })
 		}
 		if (event.target.value === "") {
 			setName({ value: "", error: "" })
@@ -105,20 +111,13 @@ const Register = () => {
 		}
 	}
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async e => {
 		e.preventDefault()
 		const email = e.target.email.value
-		if (
-			(name.value === "",
-			number.value === "",
-			confirmPassword.value === "")
-		) {
-			return
-		} else {
-			await createUserWithEmailAndPassword(email, confirmPassword.value)
-			await updateProfile({ displayName: name.value })
-		}
+		await createUserWithEmailAndPassword(email, confirmPassword.value)
+		await updateProfile({ displayName: name.value })
 	}
+
 	return (
 		<>
 			<div className="form-container">
@@ -226,9 +225,10 @@ const Register = () => {
 						<span>Already have an account?</span>{" "}
 						<Link to="/login">Log in</Link>
 					</p>
+					{error && error.message}
 				</form>
 			</div>
-			<SocialLogin/>
+			<SocialLogin />
 		</>
 	)
 }

@@ -6,8 +6,9 @@ import './Profile.css'
 
 const Profile = () => {
 	const [user, loading] = useAuthState(auth)
+    console.log(user)
 	if (loading) {
-		;<Spinner></Spinner>
+		return <Spinner></Spinner>
 	}
 	console.log(user)
 	return (
@@ -20,7 +21,7 @@ const Profile = () => {
 				}
 				alt=""
 			/>
-			<h2>{user?.displayName}</h2>
+			<h2>{user.displayName}</h2>
 		</div>
 	)
 }

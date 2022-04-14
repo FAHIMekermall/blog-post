@@ -70,6 +70,7 @@ const Header = () => {
 							SignOut
 						</Button>
 					)}
+					{user && <p>{user.displayName}</p>}
 				</li>
 			</nav>
 		</header>
