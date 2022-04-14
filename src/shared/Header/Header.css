@@ -1,0 +1,39 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 25px 120px;
+}
+
+.header-title {
+	color: rgb(66, 125, 214);
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 45px;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+
+header nav:nth-child(2) {
+	display: flex;
+}
+
+header nav:nth-child(2) a {
+	text-decoration: none;
+	color: rgb(104, 19, 104);
+	font-size: 24px;
+	padding: 8px 10px;
+	border-bottom: 1px solid rgba(255, 0, 0, 0.199);
+}
+
+nav li {
+	list-style: none;
+	margin: 0 25px;
+}
+
+.active-link {
+	border-bottom: 2px solid red !important;
+	padding-top: 0px !important;
+	padding-bottom: 5px !important;
+	border-top: 2px solid red !important;
+	border-radius: 5px;
+}
