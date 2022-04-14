@@ -2,6 +2,7 @@ import React from "react"
 import Spinner from "../../shared/Spinner/Spinner"
 import { useAuthState } from "react-firebase-hooks/auth"
 import auth from "../../firebase.init"
+import './Profile.css'
 
 const Profile = () => {
 	const [user, loading] = useAuthState(auth)
@@ -10,7 +11,7 @@ const Profile = () => {
 	}
 	console.log(user)
 	return (
-		<div>
+		<div className="profile">
 			<img
 				width="200px"
 				src={
