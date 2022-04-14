@@ -27,7 +27,7 @@ header nav:nth-child(2) a {
 	color: rgb(104, 19, 104);
 	font-size: 24px;
 	padding: 8px 10px;
-	border-bottom: 1px solid rgba(255, 0, 0, 0.199);
+	border-bottom: 1px solid rgb(66, 125, 214);
 }
 
 nav li {
@@ -36,10 +36,10 @@ nav li {
 }
 
 .active-link {
-	border-bottom: 2px solid red !important;
+	border-bottom: 2px solid rgb(66, 125, 214) !important;
 	padding-top: 0px !important;
 	padding-bottom: 5px !important;
-	border-top: 2px solid red !important;
+	border-top: 2px solid rgb(66, 125, 214) !important;
 	border-radius: 5px;
     background-color: rgba(173, 236, 236, 0.397);
 }

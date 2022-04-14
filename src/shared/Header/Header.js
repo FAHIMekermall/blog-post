@@ -9,7 +9,6 @@ import { signOut } from "firebase/auth"
 const Header = () => {
 	const { pathname } = useLocation()
 	const [user] = useAuthState(auth)
-	console.log(pathname)
 	if (pathname.includes("blog")) {
 		return ""
 	}

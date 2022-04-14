@@ -6,13 +6,11 @@ import Spinner from '../../shared/Spinner/Spinner'
 
 const Blogs = () => {
 	const [blogs] = useBlogs()
-    console.log(blogs);
     if(blogs.length === 0) {
         return <Spinner></Spinner>
     }
 	return (
 		<div>
-			<p>{blogs?.length}</p>
 			<div className="blogs">
 				{blogs.map((blog) => (
 					<Blog key={blog._id} blog={blog}></Blog>

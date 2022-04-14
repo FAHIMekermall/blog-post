@@ -1,0 +1,63 @@
+input {
+	border: none;
+	border-bottom: 2px solid rgb(66, 125, 214) !important;
+    font-size: 22px;
+    margin-top:30px ;
+    display: block;
+    padding: 8px 10px;
+    width: 560px;
+    background-color:rgba(65, 89, 223, 0);
+
+}
+input:focus{
+    outline: none;
+}
+#submit{
+    background-color:  rgb(66, 125, 214);
+    border: none !important;
+    border-radius: 4px;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+}
+.showButton{
+    cursor: pointer;
+}
+
+input::placeholder {
+	color: black !important;
+}
+.form-container{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    background-color:rgba(65, 88, 223, 0.089);
+    border-radius: 8px;
+    padding: 55px ;
+}
+.password-container{
+    position: relative;
+}
+#showPass{
+    position: absolute;
+    top: 0 ;
+    right: 0 ;
+}
+
+.redirect-register{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.redirect-register a{
+    text-decoration: none;
+    color:blue;
+    margin-left: 5px;
+}
+
+.error{
+    color:red;
+}
