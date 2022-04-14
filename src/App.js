@@ -1,15 +1,20 @@
-import logo from "./logo.svg"
 import "./App.css"
-import ReactDOM from "react-dom"
-import Button from "@mui/material/Button"
-import useBlogs from "./hooks/useBlogs/useBlogs"
 import Header from "./shared/Header/Header"
+import { Route, Routes } from "react-router-dom"
+import Blogs from "./pages/Blogs/Blogs"
+import BlogDetails from "./pages/BlogDetails/BlogDetails"
 
 function App() {
-	const [blogs] = useBlogs()
 	return (
 		<div>
-			<Header/>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Blogs />}></Route>
+				<Route
+					path="/blog/:id"
+					element={<BlogDetails></BlogDetails>}
+				></Route>
+			</Routes>
 		</div>
 	)
 }
