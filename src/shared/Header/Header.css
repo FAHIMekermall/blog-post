@@ -1,7 +1,12 @@
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 25px 120px;
+	margin-top:25px;
+	padding:5px 250px 8px 250px; 
+	position: sticky;
+	top: 0;
+	background-color:white;
+	z-index: 500;
 }
 
 .header-title {
